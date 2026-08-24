@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>lista de contatos</title>
+</head>
+<body>
+
+    <!-- codigo inicio pagina inicial  -->
+    <div class="conteiner-pagina-inicial">
+        
+        <header>
+                <h1 style="margin-bottom: 2rem;">Contatos</h1>
+            <div class="sub-titulo">   
+                        <img src="./img/mais.png" id="adicionar-contato">
+                        <img src="./img/lupa.png" id="pesquisa-contato">
+                        <img src="./img/cardapio.png" id="configuracao-adicional">
+                    
+            </div>
+        
+        </header>
+        
+        <button id="cancelar">cancelar</button>
+
+        <div class="menu">    
+            <button id="chamar-function_favoritos">favoritos</button>     
+            <button id="multiplaselecao">selecionar</button>     
+        </div>
+        
+        <main>
+            <div class="conteiner-mostrarContatos">    
+            </div>
+        </main>
+        
+        <div class="butoes">
+            <button id="excluirContato">excluir</button>
+            <button class="addfavoritos-multiplaselecao">adicionar aos favoritos</button>
+        </div>
+        
+    </div>
+
+    <!-- codigo pagina add contato -->
+    <div class="pagina-adicionar-contato">
+        <h4></h4>
+        <h2>adicionar contato</h2>
+        
+        <div class="nome">
+            <img src="./img/homem.png" class="homem">
+            <input type="text" placeholder="nome" id="nome">
+        </div>
+        
+        <div class="telefone">
+            <img src="./img/telefone.png">
+            <input type="tel" placeholder="telefone" id="telefone" maxlength="11">
+        </div>
+        
+        <div class="favoritos">
+            <img src="./img/estrela.png">
+            <p>adicionar aos favoritos?</p>
+            
+            
+        </div>
+        
+        <div class="inputs-conteiner">
+            <label>
+                <input type="radio" name="favoritos" value="sim">
+                sim
+            </label>
+
+            <label>
+                <input type="radio" name="favoritos" value="nao">
+                não
+            </label>
+        </div>
+
+        <div>
+            <button id="voltar-da-pagina-ADDcontato">voltar</button>
+            <button id="comfimar-ADDcontato">adicionar</button>
+        </div>
+
+
+    </div>
+    
+    <!-- conteiner pesquisar tarefa -->
+    <div class="pesquisar-contato">
+        
+        <div class="abaDEpesquisa">
+            <input type="text" placeholder="nome" name="contato-pesquisado">
+            <button id="pesquisarcontato">pesquisar</button>
+        </div>
+        
+        <div class="conteudo-pesquisado"></div>
+        
+        <button class="voltarpesquisarcontato" id="voltarDAJANELApesquisar">voltar</button>
+        
+    </div>
+    
+    <!-- conteiner mostrar favoritos -->
+    <div class="favoritos-conteiner">
+        <div class="titulo-favoritos">
+            <h1>favoritos</h1>
+            <img src="./img/estrela.png" alt="">
+        </div>
+        
+        <button id="voltar-da-pagina-favoritos">voltar</button>
+        <div class="mostrar-favoritos"></div>
+    </div>
+
+    <div id="conteiner_descricao">
+        <button id="voltar-dapagina-discricaoContato">voltar</button>
+        
+        <div class="conteudo-descricao">
+        </div>
+
+        <div id="butoes-descricao">
+            <button id="chamarPAGINAdeEdicao">Editar</button>
+            <button id="excluir-contato-dadescricao">excluir</button>
+            <button id="butao-favoritos">adicionar aos favoritos</button>
+        </div>
+    </div>
+
+    <div class="conteiner-edicao">
+        <h4>oi</h4>
+        <div class="nomeEDICAO">
+            <img src="./img/homem.png">
+            <input type="text" name="nome">
+        </div>
+        <div class="numeroEDicao">
+            <img src="./img/telefone.png">
+            <input type="text" name="telefone">
+        </div>
+        
+        <div class="butoes-edicao">
+            <button id="confirmar-edicaoDOcontato">comfirma</button>
+            <button id="cancelar-edicao">cancelar</button>
+        </div>
+    
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

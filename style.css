@@ -1,0 +1,523 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to right,blue 30%,pink);
+}
+
+/* estilização da pagina inicial/cabeçalho */
+.conteiner-pagina-inicial{
+    border: solid;
+    box-shadow: 1rem 1.5rem gray;
+    background-color: white;
+    border-radius: 20px;
+
+    width: 23rem;   
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+
+    display: grid;
+    grid-template: 5rem 4rem 0.5rem repeat(5,5rem) / repeat(5,4.5rem);
+    position: relative;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    border: solid gray;
+    border-radius: 20px;
+    visibility: hidden;
+    
+    grid-area: 2/1 / 3/5;
+
+    margin: auto;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.sub-titulo{
+    text-align: end;
+    grid-area: 2/4 / 3/6;
+}
+
+header{
+    grid-area: 1/1 / 3/6;
+}
+
+.conteiner-pagina-inicial img{
+    border-radius: 1rem;
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+.menu{
+    grid-area: 1/5 / 2/6;
+    position: absolute;
+    right: 2rem;
+    top: 0.2rem;
+    border: solid gray;
+    border-radius: 10px;
+    display: none;
+    flex-flow: column;
+}
+
+.menu button{
+    border:solid white 1px;
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    padding: 1rem;
+}
+
+#cancelar{
+    display: none;
+    grid-area: 2/4 / 3/6;
+    border: solid gray;
+    border-radius: 20px;
+    margin: auto;
+    padding: 1rem;
+} 
+
+.conteiner-mostrarContatos div{
+    border: solid gray;
+    margin: 0;
+    text-align: start;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    font-size: 1.3rem;
+}
+
+.menu button:hover{
+    opacity: 1;
+
+}
+
+.butoes{
+    grid-area: 8/1 / 9/6;
+    margin: auto;
+    padding: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.butoes button{
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 0.8rem;
+}
+
+.butoes button:hover{
+    color: black;
+    background-color: white;
+    border: solid blue;
+}
+
+/* fim da estilização da pagina inciaal/cabeçãlho */
+
+/* inicio da estylização do conteiner que vai aparecer os contatos */
+
+main{
+    grid-area: 4/1 / 8/6;
+}
+
+.conteiner-mostrarContatos{
+    overflow-y: auto;
+    height: 20rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    overflow-y: auto;
+}
+
+.conteiner-mostrarContatos div.selecionado{
+    border: solid black;
+    background-color: #7c3aed;
+    color: white;
+}
+
+/* fim da stylização do conteiner que vai aparecer os contatos */
+
+/* inicio estilizacao add contato */
+.pagina-adicionar-contato{
+    border: solid gray;
+    background-color: white;
+    border-radius: 30px;
+    width: 20rem;
+    min-height: 20rem;
+    margin: auto;
+    margin-top: 4rem;
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.favoritos{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+
+.favoritos img{
+    width: 2rem;
+}
+
+.pagina-adicionar-contato input#telefone{
+    padding: 15px 10px 15px 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.pagina-adicionar-contato input#telefone::placeholder{
+    font-size: 1.3rem;
+    color: blue;
+}
+
+.pagina-adicionar-contato input#nome{
+    padding: 15px 10px 15px 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.pagina-adicionar-contato input#nome::placeholder{
+    font-size: 1.3rem;
+    color: blue;
+}
+
+.inputs-conteiner{
+    font-size: 1.5rem;
+
+}
+
+h4{
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: solid gray;
+    padding: 5px;
+    visibility: hidden;
+    color: red;
+}
+
+.pagina-adicionar-contato button{
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.nome{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nome img.homem{
+    width: 2rem;
+}
+
+.telefone img{
+    width: 2rem;
+}
+
+.telefone{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* style conteiner pesquisar contatos */
+.pesquisar-contato{
+    background-color: white;
+    border: solid gray;
+    border-radius: 1rem;
+    width: 25rem;
+    min-height: 20rem;
+    margin: auto;
+    margin-top: 2rem;
+    display: none;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.conteudo-pesquisado div{
+    border: solid gray;
+    margin: 0;
+    text-align: start;
+    width: 15rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.conteudo-pesquisado{
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    min-height: 19rem;
+    overflow-y: auto;
+}
+
+.abaDEpesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 22rem;
+    margin: auto;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.pesquisar-contato button{
+    padding: 0.6rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+
+}
+
+.pesquisar-contato input{
+    width: 13rem;
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+
+}
+
+.pesquisar-contato button.voltarpesquisarcontato{
+    position: absolute;
+    bottom: 1.4rem;
+    right: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+}
+
+.conteudo-pesquisado h3{
+    font-size: 1.6rem;
+}
+
+.conteudo-pesquisado p{
+    font-size: 1.4rem;
+}
+
+/* estyle conteiner favoritos */
+
+.favoritos-conteiner{
+    background-color: white;
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    
+    width: 20rem;
+    max-height: 35rem;
+    
+    border: solid gray;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 2rem;
+    overflow-y: auto;
+}
+
+.mostrar-favoritos div{
+    border: solid gray;
+    margin: 0;
+    text-align: start;
+    width: 15rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.mostrar-favoritos h3{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+div.titulo-favoritos{
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.titulo-favoritos img{
+    width: 2rem;
+}
+
+.favoritos-conteiner button{
+    align-self: flex-start;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+.favoritos-conteiner h1{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+/* estilizao conteiner descricao dos contatos */
+
+#conteiner_descricao{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid gray;
+    border-radius: 2rem;
+    width: 25rem;
+    min-height: 30rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.conteudo-descricao{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.conteudo-descricao img{
+    width: 3rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+
+.conteudo-descricao h3{
+    font-size: 2.5rem;
+}
+
+.conteudo-descricao h5{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.conteudo-descricao p{
+    font-size: 2rem;
+}
+
+#conteiner_descricao button{ 
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    align-self: flex-start;
+
+}
+
+#butoes-descricao{
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 4rem;
+}
+
+#butoes-descricao button{
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    margin: 0;
+}
+
+/* inicio estilizacao edicao */
+
+.conteiner-edicao{
+    border: solid;
+    display: none;
+    flex-flow: column;
+    align-items: center;
+    width: 25rem;
+    min-height: 30rem;
+    margin: auto;
+    margin-top: 5rem;
+    padding: 6rem;
+    border: solid gray;
+    border-radius: 2rem;
+    position: relative;
+}
+
+.numeroEDicao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nomeEDICAO{
+    display: flex;
+    margin-bottom: 5rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.numeroEDicao img{
+    width: 3rem;
+} 
+
+.nomeEDICAO img{
+    width: 3rem;
+}
+
+.numeroEDicao input{
+    padding: 1rem;
+    width: 19rem;
+    border: none;
+    border-bottom: solid gray;
+    font-size: 2rem;
+    padding-bottom: 0;
+}
+
+.nomeEDICAO input{
+    padding: 1rem;
+    padding-bottom: 0;
+    width: 19rem;
+    font-size: 2rem;
+    border: none;
+    border-bottom: solid gray;
+}
+
+.conteiner-edicao h4{
+    position: absolute;
+    top:0
+}
+
+.butoes-edicao{
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.butoes-edicao button{
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    border-radius: 1rem;
+}
