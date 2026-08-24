@@ -111,13 +111,15 @@ const contatos = []
 
 function mostrarContatos(){
     mostrarcontatos.innerText = ""
-    console.log("entrou aqui")
-    console.log(contatos)
-    
     // Ordena os contatos de A → Z.
     // localeCompare() compara as strings respeitando as regras do idioma,
     // enquanto sort() reorganiza os objetos dentro do array.
     contatos.sort((nome1,nome2) => nome1.nome.localeCompare(nome2.nome))
+    if(contatos.length === 0){
+        const aviso = document.createElement("p")
+        aviso.innerHTML = '<strong>não há contatos salvos!</strong> <br>click no sinal de + para adicionar um "contato". Porfavor use nomes e numeros fictícios, o sistema foi feito para treinar os conhecimentos de quem criou ele.'
+        mostrarcontatos.appendChild(aviso)
+    }
     
     for(let Contato of contatos){
         
@@ -308,17 +310,11 @@ function descricaoDOcontato(event){
                     }else{
                         butao_favorito.innerText = "adicionar aos favoritos"
                         favorito.innerText = "esse contato não está na sua lista de favoritos"
-                    }
-                
-                
+                    }    
                 }
-            
-            }   
-
+            }
     }
-
 }
-
 }
 
 function atualizardescricao(){
@@ -346,12 +342,8 @@ function atualizardescricao(){
                     butao_favorito.innerText = "adicionar aos favoritos"
                     favorito.innerText = "esse contato não está na sua lista de favoritos"
                 }
-            
-            
             }
-        
         }   
-
         nome.appendChild(img)
         numero.appendChild(img2)
         card.appendChild(nome)
@@ -477,7 +469,6 @@ function excluircontato(){
         
         for(let r = 0; r < remove_internamente.length; r++){
             if(remove_internamente[r].nome === contatos[i].nome && remove_internamente[r].telefone === contatos[i].telefone){
-                console.log("ta entrando aqui")
                 
                 indice.push(i)
             }
@@ -523,9 +514,21 @@ function conteinerFavorito(){
     const favorito = contatos.filter(favoritos => favoritos.favorito === true)
 
     if(favorito.length === 0){
+        const butao = document.createElement("button")
         const h3 = document.createElement("h3")
-            h3.innerText = "não a contatos marcados como farovitos"
+            h3.innerText = "não há contatos marcados como farovitos"
+            butao.innerText = "adicionar contatos aos favoritos"
             mostrarfavoritos.appendChild(h3)
+            mostrarfavoritos.appendChild(butao)
+            butao.addEventListener("click",() =>{
+                conteiner_principal.style.display = "grid"
+                conteiner_favorito.style.display = "none"
+                cabecalho.style.visibility = "hidden"
+                cancelarselecao.style.display = "flex"
+                h2.style.visibility = "visible"
+                modoselecao = true
+            })
+
     }else{
         favorito.forEach(contatosfavoritos =>{
             const card = document.createElement("div")
