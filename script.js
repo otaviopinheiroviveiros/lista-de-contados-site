@@ -107,8 +107,30 @@ comfirmaADD.addEventListener("click",comfirmaContato)
 // assim que a pagina atualisa, mostra os contatos na tela
 window.addEventListener("load",mostrarContatos)
 
+const contatos = [
+{ nome: "Vinicius", telefone: "98981000001", favorito: false },
+{ nome: "Amanda", telefone: "98981000002", favorito: true },
+{ nome: "Thiago", telefone: "98981000003", favorito: false },
+{ nome: "Carlos", telefone: "98981000004", favorito: false },
+{ nome: "Mariana", telefone: "98981000005", favorito: true },
+{ nome: "Otávio", telefone: "98981000006", favorito: false },
+{ nome: "Beatriz", telefone: "98981000007", favorito: false },
+{ nome: "Lucas", telefone: "98981000008", favorito: true },
+{ nome: "Fernanda", telefone: "98981000009", favorito: false },
+{ nome: "João", telefone: "98981000010", favorito: false },
 
-const contatos = []
+{ nome: "Aline", telefone: "98981000011", favorito: false },
+{ nome: "Rafael", telefone: "98981000012", favorito: true },
+{ nome: "Vanessa", telefone: "98981000013", favorito: false },
+{ nome: "Pedro", telefone: "98981000014", favorito: false },
+{ nome: "Sophia", telefone: "98981000015", favorito: true },
+{ nome: "Bruno", telefone: "98981000016", favorito: false },
+{ nome: "Ana", telefone: "98981000017", favorito: false },
+{ nome: "Daniel", telefone: "98981000018", favorito: true },
+{ nome: "Patricia", telefone: "98981000019", favorito: false },
+{ nome: "Mateus", telefone: "98981000020", favorito: false },
+
+]
 
 function mostrarContatos(){
     mostrarcontatos.innerText = ""
@@ -373,7 +395,6 @@ function pesquisarContato(){
 }
 
 function voltar_addcontao_paraPGinicial(){
-    // mostrarContatos() 
     conteiner_principal.style.display = "grid"
     conteiner_pagina2ADDcontato.style.display = "none"
 }
@@ -662,7 +683,7 @@ function comfimar_contatoEDItado(){
                     contatos[i].nome = inputnomeEDICAO.value
                     contatos[i].telefone = inputelefoneEDICAO.value 
                     
-                    localStorage.setItem("contatos",JSON.stringify(contatos[i]))
+                    localStorage.setItem("contatos",JSON.stringify(contatos))
                     
                     elementosDEscricao[a].nome = inputnomeEDICAO.value
                     elementosDEscricao[a].telefone = inputelefoneEDICAO.value

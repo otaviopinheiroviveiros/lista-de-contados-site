@@ -5,14 +5,15 @@
 }
 
 body{
-    background: linear-gradient(to right,blue 30%,pink);
+    background: linear-gradient(90deg,rgba(0, 225, 255, 0.719),#00a0fd,rgb(0, 47, 255)80%);
 }
 
 /* estilização da pagina inicial/cabeçalho */
 .conteiner-pagina-inicial{
-    border: solid;
-    box-shadow: 1rem 1.5rem gray;
-    background-color: white;
+    border-bottom: solid 1px;
+    border-right: solid 1px;
+    box-shadow: 1rem 1.5rem 0.5rem antiquewhite;
+    background-color: antiquewhite;
     border-radius: 20px;
 
     width: 23rem;   
@@ -86,7 +87,7 @@ header{
 } 
 
 .conteiner-mostrarContatos div{
-    border: solid gray;
+    background-color: rgb(255, 254, 252);
     margin: 0;
     text-align: start;
     padding-left: 1rem;
@@ -137,10 +138,15 @@ main{
 
 .conteiner-mostrarContatos{
     overflow-y: auto;
+    scrollbar-width: none;
     height: 20rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     overflow-y: auto;
+}
+
+.conteiner-mostrarContatos::-webkit-scrollbar{
+    display: none;
 }
 
 .conteiner-mostrarContatos div.selecionado{
@@ -149,14 +155,23 @@ main{
     color: white;
 }
 
+#cancelar{
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
+}
 /* fim da stylização do conteiner que vai aparecer os contatos */
 
 /* inicio estilizacao add contato */
 .pagina-adicionar-contato{
-    border: solid gray;
-    background-color: white;
+    border-bottom: solid 1px;
+    border-right: solid 1px;
+    box-shadow: 1rem 1rem 1rem antiquewhite;
+    background-color: antiquewhite;
     border-radius: 30px;
-    width: 20rem;
+    width: 23rem;
     min-height: 20rem;
     margin: auto;
     margin-top: 4rem;
@@ -182,27 +197,27 @@ main{
 .pagina-adicionar-contato input#telefone{
     padding: 15px 10px 15px 10px;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .pagina-adicionar-contato input#telefone::placeholder{
-    font-size: 1.3rem;
-    color: blue;
+    font-size: 1.5rem;
+    color: red;
 }
 
 .pagina-adicionar-contato input#nome{
     padding: 15px 10px 15px 10px;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .pagina-adicionar-contato input#nome::placeholder{
-    font-size: 1.3rem;
-    color: blue;
+    font-size: 1.5rem;
+    color: red;
 }
 
 .inputs-conteiner{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 
 }
 
@@ -219,8 +234,13 @@ h4{
     padding: 0.5rem;
     border-radius: 20px;
     margin-bottom: 1rem;
+    margin-left: 1rem;
     margin-top: 2rem;
     font-size: 1.5rem;
+    color: blue;
+    background-color:white;
+    border: none;
+    border-bottom: solid;
 }
 
 .nome{
@@ -246,8 +266,7 @@ h4{
 
 /* style conteiner pesquisar contatos */
 .pesquisar-contato{
-    background-color: white;
-    border: solid gray;
+    background-color: antiquewhite;
     border-radius: 1rem;
     width: 25rem;
     min-height: 20rem;
@@ -263,7 +282,7 @@ h4{
 }
 
 .conteudo-pesquisado div{
-    border: solid gray;
+    background-color: white;
     margin: 0;
     text-align: start;
     width: 15rem;
@@ -273,6 +292,7 @@ h4{
 }
 
 .conteudo-pesquisado{
+    max-height: 20rem;
     margin-bottom: 5rem;
     margin-top: 1rem;
     margin-left: 1rem;
@@ -281,10 +301,16 @@ h4{
     padding: 1rem;
     min-height: 19rem;
     overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.conteudo-pesquisado::-webkit-scrollbar{
+    display: none;
 }
 
 .abaDEpesquisa{
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: space-around;
     width: 22rem;
@@ -298,22 +324,34 @@ h4{
     padding: 0.6rem;
     font-size: 1.3rem;
     border-radius: 1rem;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
 
 }
 
 .pesquisar-contato input{
-    width: 13rem;
+    border: none;
+    border-bottom: solid;
+    width: 15rem;
+    
     padding: 0.6rem;
+    padding-bottom: 0;
     font-size: 1.5rem;
     border-radius: 1rem;
+    min-height: 4rem;
 
+}
+
+.pesquisar-contato input::placeholder{
+    color: red;
 }
 
 .pesquisar-contato button.voltarpesquisarcontato{
     position: absolute;
     bottom: 1.4rem;
     right: 0.5rem;
-    padding: 0.3rem;
+    padding: 1rem;
     border-radius: 1rem;
     font-size: 1.4rem;
 }
@@ -329,34 +367,42 @@ h4{
 /* estyle conteiner favoritos */
 
 .favoritos-conteiner{
-    background-color: white;
+    background-color: antiquewhite;
     display: none;
     flex-flow: column;
     align-items: center;
     
-    width: 20rem;
+    width: 23rem;
     max-height: 35rem;
     
-    border: solid gray;
+    border: none;
+    border-bottom: solid 1px;
+    border-right: solid 1px;
+    box-shadow: 1.5rem 1.5rem 1rem gray;
     border-radius: 20px;
     margin: auto;
     margin-top: 2rem;
     overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .mostrar-favoritos div{
-    border: solid gray;
+    background-color: white;
     margin: 0;
-    text-align: start;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border: solid;
     width: 15rem;
     padding-left: 1rem;
     margin-bottom: 1rem;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .mostrar-favoritos h3{
     margin-left: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 div.titulo-favoritos{
@@ -372,6 +418,10 @@ div.titulo-favoritos{
 
 .favoritos-conteiner button{
     align-self: flex-start;
+    font-size: 1.4rem;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
     margin-left: 1rem;
     margin-bottom: 1rem;
     padding: 10px 20px 10px 20px;
@@ -386,11 +436,13 @@ div.titulo-favoritos{
 /* estilizao conteiner descricao dos contatos */
 
 #conteiner_descricao{
+    background-color: antiquewhite;
+    border: none;
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: solid gray;
+    box-shadow: 1.5rem 1.5rem 0.5rem gray;
     border-radius: 2rem;
     width: 25rem;
     min-height: 30rem;
@@ -417,6 +469,7 @@ div.titulo-favoritos{
 .conteudo-descricao h5{
     font-size: 1.5rem;
     margin-top: 2rem;
+    color: red;
 }
 
 .conteudo-descricao p{
@@ -431,6 +484,9 @@ div.titulo-favoritos{
     margin-left: 1rem;
     border-radius: 1rem;
     align-self: flex-start;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
 
 }
 
@@ -458,8 +514,12 @@ div.titulo-favoritos{
     margin: auto;
     margin-top: 5rem;
     padding: 6rem;
-    border: solid gray;
+    background-color: antiquewhite;
+    border: none;
+    border-bottom: 1px solid;
+    /* border-right: solid 1px; */
     border-radius: 2rem;
+
     position: relative;
 }
 
@@ -489,8 +549,10 @@ div.titulo-favoritos{
 .numeroEDicao input{
     padding: 1rem;
     width: 19rem;
+    min-height: 4rem;
     border: none;
     border-bottom: solid gray;
+    border-radius: 1rem;
     font-size: 2rem;
     padding-bottom: 0;
 }
@@ -499,9 +561,11 @@ div.titulo-favoritos{
     padding: 1rem;
     padding-bottom: 0;
     width: 19rem;
+    min-height: 4rem;
     font-size: 2rem;
     border: none;
     border-bottom: solid gray;
+    border-radius: 1rem;
 }
 
 .conteiner-edicao h4{
@@ -520,4 +584,7 @@ div.titulo-favoritos{
     font-size: 1.5rem;
     padding: 0.7rem;
     border-radius: 1rem;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
 }
