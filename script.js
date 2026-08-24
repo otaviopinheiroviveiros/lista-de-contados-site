@@ -400,6 +400,8 @@ function voltar_addcontao_paraPGinicial(){
 }
 
 function voltarJANeladePEsquisa(){
+    inputpesquisa.value = ""
+    resultado_dapesquisa.innerText = ""
     pesquisar_contato.style.display = "none"
     conteiner_principal.style.display = "grid"
 }
@@ -671,7 +673,7 @@ function conteinerpaginaEdicao(){
 function comfimar_contatoEDItado(){
     if(inputnomeEDICAO.value == "" || inputelefoneEDICAO.value == ""){
         return
-    
+
     }else if(!/^\d{11}$/.test(inputelefoneEDICAO.value)){
         return
     
