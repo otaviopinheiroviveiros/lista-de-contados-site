@@ -112,6 +112,8 @@ const contatos = []
 
 function mostrarContatos(){
     mostrarcontatos.innerText = ""
+    console.log("entrou aqui")
+    console.log(contatos)
     
     // Ordena os contatos de A → Z.
     // localeCompare() compara as strings respeitando as regras do idioma,
@@ -138,6 +140,12 @@ function mostrarContatos(){
         })
     }
     
+}
+
+let verificarARmazenamento = localStorage.getItem("contatos")
+
+if(verificarARmazenamento !== null){
+    contatos.push(...JSON.parse(localStorage.getItem("contatos")))
 }
 
 let contador = 0
@@ -365,6 +373,7 @@ function pesquisarContato(){
 }
 
 function voltar_addcontao_paraPGinicial(){
+    // mostrarContatos() 
     conteiner_principal.style.display = "grid"
     conteiner_pagina2ADDcontato.style.display = "none"
 }
@@ -388,22 +397,24 @@ function comfirmaContato(){
     const favoritoADD = document.querySelector('input[name="favoritos"]:checked')
         
     let contatoNOME = nomeADD.value
-    let conatato_numero = telefoneADD.value
+    let contato_numero = telefoneADD.value
     
     if(nomeADD.value == "" || telefoneADD.value == ""){
         mostrar_mensagemERRo()
         
-    }else if(!/^\d{11}$/.test(conatato_numero)){
+    }else if(!/^\d{11}$/.test(contato_numero)){
         mensagemNUMEROinvalido()
         
     }else{
         nomeADD.value = ""
         telefoneADD.value = ""
         if(favoritoADD === null || favoritoADD.value === "nao"){
-            contatos.push({nome:contatoNOME,telefone:conatato_numero,favorito:false})
-            
+            contatos.push({nome:contatoNOME,telefone:contato_numero,favorito:false})
+            localStorage.setItem("contatos",JSON.stringify(contatos))
+        
         }else if(favoritoADD.value === "sim"){
-            contatos.push({nome:contatoNOME,telefone:conatato_numero,favorito:true})
+            contatos.push({nome:contatoNOME,telefone:contato_numero,favorito:true})
+            localStorage.setItem("contatos",JSON.stringify(contatos))
         }
     }
 }
@@ -475,6 +486,7 @@ function excluircontato(){
     
     for(let a = indice.length - 1; a >= 0; a--){
         contatos.splice(indice[a], 1)
+        localStorage.setItem("contatos",JSON.stringify(contatos))
     }
     
     remove_internamente = []
@@ -488,6 +500,7 @@ function excluircontato_dadescricao(){
         
                 if(elementosDEscricao[a].nome === contatos[i].nome && elementosDEscricao[a].telefone === contatos[i].telefone){
                     contatos.splice(i,1)
+                    localStorage.setItem("contatos",JSON.stringify(contatos))
                 }
             }
         }
@@ -497,7 +510,6 @@ function excluircontato_dadescricao(){
         conteudodescricao.innerText = ""
         conteinerdescricao.style.display = "none"
         conteiner_principal.style.display = "grid"
-        console.log(contatos)
 }
 
 function conteinerFavorito(){
@@ -649,6 +661,8 @@ function comfimar_contatoEDItado(){
                 if(elementosDEscricao[a].nome === contatos[i].nome && elementosDEscricao[a].telefone === contatos[i].telefone){
                     contatos[i].nome = inputnomeEDICAO.value
                     contatos[i].telefone = inputelefoneEDICAO.value 
+                    
+                    localStorage.setItem("contatos",JSON.stringify(contatos[i]))
                     
                     elementosDEscricao[a].nome = inputnomeEDICAO.value
                     elementosDEscricao[a].telefone = inputelefoneEDICAO.value
