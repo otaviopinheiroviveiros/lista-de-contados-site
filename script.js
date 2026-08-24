@@ -372,11 +372,13 @@ function pesquisarContato(){
 }
 
 function voltar_addcontao_paraPGinicial(){
+    mostrarContatos()
     conteiner_principal.style.display = "grid"
     conteiner_pagina2ADDcontato.style.display = "none"
 }
 
 function voltarJANeladePEsquisa(){
+    mostrarContatos()
     inputpesquisa.value = ""
     resultado_dapesquisa.innerText = ""
     pesquisar_contato.style.display = "none"
