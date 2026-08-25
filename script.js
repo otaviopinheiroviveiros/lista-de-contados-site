@@ -119,10 +119,7 @@ function mostrarContatos(){
         const aviso = document.createElement("p")
         aviso.innerHTML = '<strong>não há contatos salvos!</strong> click no sinal de + para adicionar um "contato". Porfavor use nomes e numeros fictícios, o sistema foi feito para treinar os conhecimentos de quem criou ele.'
         aviso.classList.add("aviso")
-        console.log(mostrarcontatos)
-        console.log(aviso)
         mostrarcontatos.appendChild(aviso)
-        console.log(aviso.classList)
     }
     
     for(let Contato of contatos){

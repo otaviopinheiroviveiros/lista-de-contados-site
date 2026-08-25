@@ -620,3 +620,9 @@ div.titulo-favoritos{
     border: none;
     border-bottom: solid;
 }
+
+@media (max-width:500px){
+    .conteiner-pagina-inicial,.conteiner-edicao,#conteiner-descricao,.favoritos-conteiner,.pesquisar-contato,.pagina-adicionar-contato{
+        width: 100%;
+    }
+}
