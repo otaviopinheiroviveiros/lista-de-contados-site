@@ -117,8 +117,12 @@ function mostrarContatos(){
     contatos.sort((nome1,nome2) => nome1.nome.localeCompare(nome2.nome))
     if(contatos.length === 0){
         const aviso = document.createElement("p")
-        aviso.innerHTML = '<strong>não há contatos salvos!</strong> <br>click no sinal de + para adicionar um "contato". Porfavor use nomes e numeros fictícios, o sistema foi feito para treinar os conhecimentos de quem criou ele.'
+        aviso.innerHTML = '<strong>não há contatos salvos!</strong> click no sinal de + para adicionar um "contato". Porfavor use nomes e numeros fictícios, o sistema foi feito para treinar os conhecimentos de quem criou ele.'
+        aviso.classList.add("aviso")
+        console.log(mostrarcontatos)
+        console.log(aviso)
         mostrarcontatos.appendChild(aviso)
+        console.log(aviso.classList)
     }
     
     for(let Contato of contatos){
@@ -140,6 +144,7 @@ function mostrarContatos(){
             }
         })
     }
+    
     
 }
 
