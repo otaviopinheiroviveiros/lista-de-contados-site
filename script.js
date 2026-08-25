@@ -146,7 +146,6 @@ function mostrarContatos(){
 }
 
 let verificarARmazenamento = localStorage.getItem("contatos")
-
 if(verificarARmazenamento !== null){
     contatos.push(...JSON.parse(localStorage.getItem("contatos")))
 }
@@ -279,7 +278,9 @@ function descricaoDOcontato(event){
         }
     
     }else{
-        
+        // a diferença desse for para esse é que esse serve para ver a descricao do conatao quando ele é clicado na aba de pesquisa
+        // e na aba de favoritos
+        // isso depente da variavel de controle, chamada atualizar descricao
         for(let descricao of elementosDEscricao){
             
             const card = document.createElement("div")
@@ -454,7 +455,8 @@ function mensagemNUMEROinvalido(){
     }, 3000);
     
 }
-
+// esse array serve para guardar os indices dos contatos selecionados
+// a partir dele eu consigo guarda e depois excluir do maior para o menor para que não haja conflito na hora da remoção 
 let indice = []
 
 function excluircontato(){
@@ -542,6 +544,13 @@ function conteinerFavorito(){
             card.appendChild(nome)
             card.appendChild(numero)
             mostrarfavoritos.appendChild(card)
+            card.addEventListener("click",(event)=>{
+                if(!modoselecao){
+                    mostrarfavoritos.innerText = ""
+                    conteiner_favorito.style.display = "none"
+                    descricaoDOcontato(event)
+                }
+            })
         })
 
 }
